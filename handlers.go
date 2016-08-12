@@ -23,12 +23,12 @@ func Redirect(w http.ResponseWriter, r *http.Request) {
 
     response, err := http.Get(strings.Join(url, ""))
     if err != nil {
-    	log.Fatal(err)
+	log.Print(err)
     } else {
     	defer response.Body.Close()
         contents, err := ioutil.ReadAll(response.Body)
         if err != nil {
-            log.Fatal(err)
+            log.Print(err)
         }        
         fmt.Fprintf(os.Stdout, "Redirect to [%s] service. Response: %s\n", service, string(contents))
         fmt.Fprintf(w, "Redirect to [%s] service. Response: %s\n", service, string(contents))
