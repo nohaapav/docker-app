@@ -30,7 +30,7 @@ func Redirect(w http.ResponseWriter, r *http.Request) {
         if err != nil {
             log.Print(err)
         }        
-        fmt.Fprintf(os.Stdout, "Redirect to [%s] service. Response: %s", service, string(contents))
-        fmt.Fprintf(w, "Redirect to [%s] service. Response: %s", service, string(contents))
+        fmt.Fprintf(os.Stdout, "Redirecting to %s. Response: %s", service, string(contents))
+        fmt.Fprintf(w, "Redirecting to %s. Response: %s", service, string(contents))
     }
 }
