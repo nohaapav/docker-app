@@ -25,4 +25,3 @@ var routes = Routes{
         Redirect,
     },
 }
-
